@@ -1,0 +1,10 @@
+/* Empty. Add your own CSS if you like */
+.spacer-small {
+    padding: 10px 0 10px 0;
+}
+
+.img-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

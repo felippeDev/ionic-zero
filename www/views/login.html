@@ -1,0 +1,28 @@
+<ion-view title="Login">
+    <ion-content padding="true" class="has-header">
+        <div class="spacer-small">&nbsp;</div>
+        <img src="/img/ionic-large.png" alt="Ionic" width="40%;" class="img-center" />
+        <div class="spacer-small">&nbsp;</div>
+        <form name="form" novalidate>
+            <ion-list>
+                <label class="item item-input">
+                    <span class="input-label">E-mail</span>
+                    <input type="text" name="email" placeholder="enter username..." ng-model="user.email" ng-minlength="5" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" name="password" placeholder="At least 6 characters" ng-model="user.password" ng-minlength="6" required>
+                </label>
+            </ion-list>
+            <div class="padding">
+                <p ng-if="form.email.$error.required" class="assertive">* Username is required</p>
+                <p ng-if="form.email.$invalid && !loginForm.email.$pristine" class="assertive">* Username must be an email address</p>
+                <p ng-if="form.email.$error.minlength" class="assertive">* Username must be longer than 5 characters</p>
+                <p ng-if="form.password.$error.required" class="assertive">* Password is required</p>
+                <p ng-if="form.password.$error.minlength" class="assertive">* Password must be longer than 6 characters</p>
+            </div>
+            <button class="button button-positive button-block" style="width: 90%; margin: 20px 5%;" ng-click="login(user)" ng-disabled="!form.$valid">Login</button>
+            <a ui-sref="register" class="button button-positive button-block" style="width: 90%; margin: 0px 5%;">Register</a>
+        </form>
+    </ion-content>
+</ion-view>
